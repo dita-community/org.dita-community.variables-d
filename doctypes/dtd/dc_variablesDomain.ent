@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================================================
+     DITA Community Variables Domain
+     
+     Defines elements for defining "variables" and variable references
+     that are metadata based.
+     
+     Copyright (c) 2014 Eliot Kimber
+     
+     ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                   Variables DOMAIN ENTITIES                   -->
+<!-- ============================================================= -->
+
+<!ENTITY % dc_variables-d-data
+   " dc-variable-definitions
+   "
+>
+
+<!ENTITY % dc_variables-d-text
+   " dc-variableref_text
+   "
+>
+
+<!ENTITY % dc_variables-d-keyword
+   " dc-variableref_keyword
+   "
+>
+
+
+
+<!ENTITY dc_variables-d-att     
+  "(topic dc_variables-d)"
+>
+
+
+<!-- ================== End DITA Community Variables Domain Entities ============ -->

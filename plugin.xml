@@ -1,0 +1,29 @@
+<!-- 
+  Plugin descriptor for the DITA Community variables domain
+  
+  Copyright (c) 2014 Eliot Kimber
+  Licensed under Apache 2 license
+  
+  -->
+<plugin id="org.dita-community.variables-d">
+
+  <require plugin="org.dita-community.common.xslt"/> 
+  
+  <!-- Doctypes integration: -->
+  <feature extension="dita.specialization.catalog.relative" 
+    value="catalog.xml" 
+    type="file"
+  />
+
+  <!-- PDF2 plugin extensions: -->
+  <feature extension="dita.xsl.xslfo"
+    value="xsl/variables-d2pdf.xsl" 
+      type="file"
+  />
+  <!-- XHTML plugin extensions: -->
+  <feature extension="dita.xsl.xhtml"
+    value="xsl/variables-d2html.xsl" 
+      type="file"
+  />
+      
+</plugin>
