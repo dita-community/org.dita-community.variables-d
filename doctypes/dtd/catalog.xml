@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
-  prefer="public">  
-  <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain"
-    uri="dc_variablesDomain.mod"
-  />
-  <system systemId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain.mod"
-    uri="dc_variablesDomain.mod"
-  />
-  <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities"
-    uri="dc_variablesDomain.ent"
-  />
-  <system systemId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain.ent"
-    uri="dc_variablesDomain.ent"
-  />
-</catalog>  
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <nextCatalog catalog="dc_variables-d/catalog.xml"/>
+</catalog>
