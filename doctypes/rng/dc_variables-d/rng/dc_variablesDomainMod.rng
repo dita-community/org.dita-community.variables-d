@@ -129,7 +129,9 @@ attribute, the content is ignored and the @value attribute is used.
 Variable definitions should not be nested.
       </a:documentation>
       <define name="dc-variable-definition.content">
-        <ref name="data.cnt"/>
+        <zeroOrMore>
+          <ref name="data.cnt"/>
+        </zeroOrMore>
       </define>
       <define name="dc-variable-definition.attributes">
         <attribute name="name"><a:documentation>The variable name by which the variable is referenced.</a:documentation></attribute>
@@ -170,7 +172,9 @@ attribute, the content is ignored and the @value attribute is used.
 Variable definitions should not be nested.
       </a:documentation>
       <define name="dc-variable-definition-fallback.content">
-        <ref name="data.cnt"/>
+        <zeroOrMore>
+          <ref name="data.cnt"/>
+        </zeroOrMore>
       </define>
       <define name="dc-variable-definition-fallback.attributes">
         <attribute name="name"><a:documentation>The variable name by which the variable is referenced.</a:documentation></attribute>
