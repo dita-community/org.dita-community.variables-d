@@ -19,11 +19,11 @@ Copyright (c) 2014 Eliot Kimber
       <moduleType>elementdomain</moduleType>
       <moduleShortName>dc_variables-d</moduleShortName>
       <modulePublicIds>
-        <dtdMod>urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain</dtdMod>
-        <dtdEnt>urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities</dtdEnt>
-        <rncMod>urn:X-pubid:dita-community.org:doctypes:dita:rnc:dc_variablesDomainMod.rnc</rncMod>
-        <rngMod>urn:X-pubid:dita-community.org:doctypes:dita:rng:dc_variablesDomainMod.rng</rngMod>
-        <xsdMod>urn:X-pubid:dita-community.org:doctypes:dita:xsd:dc_variablesDomainMod.xsd</xsdMod>
+        <dtdMod>urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain</dtdMod>
+        <dtdEnt>urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities</dtdEnt>
+        <rncMod>urn:pubid:dita-community.org:doctypes:dita:rnc:dc_variablesDomainMod.rnc</rncMod>
+        <rngMod>urn:pubid:dita-community.org:doctypes:dita:rng:dc_variablesDomainMod.rng</rngMod>
+        <xsdMod>urn:pubid:dita-community.org:doctypes:dita:xsd:dc_variablesDomainMod.xsd</xsdMod>
       </modulePublicIds>
       <domainsContribution>(topic dc_variables-d)</domainsContribution>
     </moduleMetadata>

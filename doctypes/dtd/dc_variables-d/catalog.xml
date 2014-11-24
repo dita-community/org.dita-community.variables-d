@@ -2,12 +2,12 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 <!--DITA Community Variables Domain-->
 
-   <public publicId="urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain"
+   <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain"
            uri="dtd/dc_variablesDomain.mod"/>
-   <public publicId="urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain"
+   <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain"
            uri="dtd/dc_variablesDomain.mod"/>
-   <public publicId="urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities"
+   <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities"
            uri="dtd/dc_variablesDomain.ent"/>
-   <public publicId="urn:X-pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities"
+   <public publicId="urn:pubid:dita-community.org:doctypes:dita:modules:dc_variablesDomain:entities"
            uri="dtd/dc_variablesDomain.ent"/>
 </catalog>
