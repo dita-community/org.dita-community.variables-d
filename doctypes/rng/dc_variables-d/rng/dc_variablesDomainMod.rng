@@ -281,31 +281,31 @@ element.</a:documentation>
     <define name="dc-variable-definitions.attlist" combine="interleave">
       <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/data dc-variable-d/dc-variable-definitions "/>
+        <attribute name="class" a:defaultValue="+ topic/data dc-variables-d/dc-variable-definitions "/>
       </optional>
     </define>
     <define name="dc-variable-definition.attlist" combine="interleave">
       <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/data dc-variable-d/dc-variable-definition "/>
+        <attribute name="class" a:defaultValue="+ topic/data dc-variables-d/dc-variable-definition "/>
       </optional>
     </define>
     <define name="dc-variable-definition-fallback.attlist" combine="interleave">
       <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/data dc-variable-d/dc-variable-definition-fallback "/>
+        <attribute name="class" a:defaultValue="+ topic/data dc-variables-d/dc-variable-definition-fallback "/>
       </optional>
     </define>
     <define name="dc-variableref.attlist" combine="interleave">
       <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/text dc-variable-d/dc-variableref "/>
+        <attribute name="class" a:defaultValue="+ topic/text dc-variables-d/dc-variableref "/>
       </optional>
     </define>
     <define name="dc-variableref_keyword.attlist" combine="interleave">
       <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/text dc-variable-d/dc-variableref_keyword "/>
+        <attribute name="class" a:defaultValue="+ topic/text dc-variables-d/dc-variableref_keyword "/>
       </optional>
     </define>
   </div>

@@ -9,19 +9,19 @@
 
   
   <xsl:template 
-    match="*[df:class(., 'd4p-variables-d/d4p-variableref_text')] |
+    match="*[df:class(., 'dc-variables-d/dc-variableref')] |
+           *[df:class(., 'dc-variables-d/dc-variableref_keyword')] |
+           *[df:class(., 'd4p-variables-d/d4p-variableref_text')] |
            *[df:class(., 'd4p-variables-d/d4p-variableref_keyword')]
     " priority="10">
+    <xsl:param name="doDebug" as="xs:boolean" tunnel="yes" select="false()"/>
     <xsl:param name="topicref" select="." as="element()?" tunnel="yes"/>
-    <xsl:message> + [DEBUG] d4p-variableref: varname="<xsl:value-of select="normalize-space(.)"/>"</xsl:message>
-<!--    <xsl:message> + [DEBUG] d4p-variableref: topicref=
-      
-      <xsl:sequence select="$topicref"/>
-      
-    </xsl:message>
--->    
+    <xsl:variable name="doDebug" as="xs:boolean" select="true()"/>
+    <xsl:if test="$doDebug">
+      <xsl:message> + [DEBUG] dc-variableref: varname="<xsl:value-of select="normalize-space(.)"/>"</xsl:message>
+    </xsl:if>
     <xsl:if test="not($topicref)">
-      <xsl:message> - [WARN] d4p-variables-domain: No $topicref parameter in context <xsl:sequence select="concat(name(..), '/', name(.))"/>.</xsl:message>
+      <xsl:message> - [WARN] dc-variables-domain: No $topicref parameter in context <xsl:sequence select="concat(name(..), '/', name(.))"/>.</xsl:message>
     </xsl:if>
     
     <xsl:variable name="parentTopic" select="ancestor::*[df:class(., 'topic/topic')][1]" as="element()?"/>
@@ -38,11 +38,12 @@
       -->
     <!-- Get definitions in the refernce's containing XML document: -->
     <xsl:variable name="localVardefs" as="element()*"
-      select="
+      select="ancestor::*/*[df:class(., 'dc-variables-d/dc-variable-definitions')]//*[df:class(., 'dc-variables-d/dc-variable-definition')][@name = $variableName] |
+      ancestor::*[df:class(., 'topic/topic')]/*[df:class(., 'topic/prolog')]//*[df:class(., 'dc-variables-d/dc-variable-definition')][@name = $variableName] |
       ancestor::*/*[df:class(., 'd4p-variables-d/d4p-variable-definitions')]//*[df:class(., 'd4p-variables-d/d4p-variable-definition')][@name = $variableName] |
       ancestor::*[df:class(., 'topic/topic')]/*[df:class(., 'topic/prolog')]//*[df:class(., 'd4p-variables-d/d4p-variable-definition')][@name = $variableName]"
     />
-    <xsl:if test="$debugBoolean">
+    <xsl:if test="$doDebug">
       <xsl:message> + [DEBUG] $localVardefs=
           <xsl:sequence select="for $vardef in $localVardefs return concat('name=', $vardef/@name)"/>
         </xsl:message>
@@ -65,7 +66,8 @@
           <xsl:variable name="variableDefs" as="element()*"
             select="
             for $metadata in $metadataAncestry
-              return ($metadata//*[df:class(., 'd4p-variables-d/d4p-variable-definition')][@name = $variableName])[1]            
+              return ($metadata//*[df:class(., 'dc-variables-d/dc-variable-definition') or
+                       df:class(., 'd4p-variables-d/d4p-variable-definition')][@name = $variableName])[1]            
             "
           />
           <xsl:sequence 
@@ -97,10 +99,12 @@
         <!-- See if there is a fallback definition -->
         <xsl:variable name="localFallbackDefs" as="element()*"
           select="
+                    ancestor::*/*[df:class(., 'dc-variables-d/dc-variable-definitions')]//*[df:class(., 'dc-variables-d/dc-variable-definition')][@name = $variableName] |
+          ancestor::*[df:class(., 'topic/topic')]/*[df:class(., 'topic/prolog')]//*[df:class(., 'dc-variables-d/dc-variable-definition-fallback')][@name = $variableName] |
           ancestor::*/*[df:class(., 'd4p-variables-d/d4p-variable-definitions')]//*[df:class(., 'd4p-variables-d/d4p-variable-definition')][@name = $variableName] |
           ancestor::*[df:class(., 'topic/topic')]/*[df:class(., 'topic/prolog')]//*[df:class(., 'd4p-variables-d/d4p-variable-definition-fallback')][@name = $variableName]"
         />
-        <xsl:if test="$debugBoolean">
+        <xsl:if test="$doDebug">
           <xsl:message> + [DEBUG] $localFallbackDefs=
             <xsl:sequence select="for $vardef in $localFallbackDefs return concat('name=', $vardef/@name)"/>
           </xsl:message>
@@ -112,11 +116,11 @@
         <xsl:choose>
           <xsl:when test="count($localFallbackDef) = 1">
             <xsl:message> + [WARN] Using fallback value for variable "<xsl:sequence select="$variableName"/>"</xsl:message>
-            <span class="d4p-unresolved-variable"><xsl:apply-templates select="$localFallbackDef/node()"/></span>
+            <span class="dc-unresolved-variable"><xsl:apply-templates select="$localFallbackDef/node()"/></span>
           </xsl:when>
           <xsl:otherwise>
             <!-- Apply default processing for this element -->
-            <span class="d4p-unresolved-variable"><xsl:next-match/></span>
+            <span class="dc-unresolved-variable"><xsl:next-match/></span>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>

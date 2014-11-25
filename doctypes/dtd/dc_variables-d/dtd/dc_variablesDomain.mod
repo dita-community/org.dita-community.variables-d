@@ -109,11 +109,11 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  dc-variable-definitions %global-atts;  class CDATA "+ topic/data dc-variable-d/dc-variable-definitions ">
-<!ATTLIST  dc-variable-definition %global-atts;  class CDATA "+ topic/data dc-variable-d/dc-variable-definition ">
-<!ATTLIST  dc-variable-definition-fallback %global-atts;  class CDATA "+ topic/data dc-variable-d/dc-variable-definition-fallback ">
-<!ATTLIST  dc-variableref %global-atts;  class CDATA "+ topic/text dc-variable-d/dc-variableref ">
-<!ATTLIST  dc-variableref_keyword %global-atts;  class CDATA "+ topic/text dc-variable-d/dc-variableref_keyword ">
+<!ATTLIST  dc-variable-definitions %global-atts;  class CDATA "+ topic/data dc-variables-d/dc-variable-definitions ">
+<!ATTLIST  dc-variable-definition %global-atts;  class CDATA "+ topic/data dc-variables-d/dc-variable-definition ">
+<!ATTLIST  dc-variable-definition-fallback %global-atts;  class CDATA "+ topic/data dc-variables-d/dc-variable-definition-fallback ">
+<!ATTLIST  dc-variableref %global-atts;  class CDATA "+ topic/text dc-variables-d/dc-variableref ">
+<!ATTLIST  dc-variableref_keyword %global-atts;  class CDATA "+ topic/text dc-variables-d/dc-variableref_keyword ">
 
 <!-- ================== End of DITA Community Variables Domain ==================== -->
  
